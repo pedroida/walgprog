@@ -37,6 +37,9 @@ pt-BR:
       sponsor_event:
         one: Patrocinador
         other: Patrocinadores
+      email_template:
+        one: Modelo de email
+        other: Modelos de email
     attributes:
       attribute_commons: &commons
         name: Nome
@@ -91,6 +94,11 @@ pt-BR:
         icon: Ícone
         status: Status
         alternative_text: Texto alternativo
+        <<: *commons
+      email_template:
+        name: Nome
+        content: Conteúdo
+        content_markdown: Conteúdo
         <<: *commons
   helpers:
     back: Voltar
@@ -228,3 +236,9 @@ pt-BR:
   sponsors:
     add: Adicionar Patrocinador
     index: Patrocinadores
+  email_template:
+    welcome_mail: Bem vindo
+    update_contact: Atualizar dados
+    unregister: Desregistrar
+    index: Modelos de email
+    edit: Editar modelo de email

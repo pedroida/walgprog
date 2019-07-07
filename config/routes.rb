@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     namespace :admins do
       root to: 'dashboard#index'
 
+      resources :email_templates, except: [:new, :create, :destroy]
       resources :contacts
       resources :institutions
       resources :admins, expect: :show

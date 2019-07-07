@@ -13,3 +13,17 @@ scholarity = [
 scholarity.each do |title|
   Scholarity.find_or_create_by!(name: title[:name], abbr: title[:abbr])
 end
+
+email_templates = [
+  { name: I18n.t('email_template.welcome_mail'),
+    content_markdown: Faker::Markdown.sandwich(6, 3) },
+  { name: I18n.t('email_template.update_contact'),
+    content_markdown: Faker::Markdown.sandwich(6, 3) },
+  { name: I18n.t('email_template.unregister'),
+    content_markdown: Faker::Markdown.sandwich(6, 3) }
+]
+
+email_templates.each do |template|
+  EmailTemplate.create_with(name: template[:name], content_markdown: template[:content_markdown])
+               .find_or_create_by!(name: template[:name])
+end

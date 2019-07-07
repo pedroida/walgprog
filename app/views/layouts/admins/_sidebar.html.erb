@@ -29,5 +29,9 @@
     <%= active_link_to admins_researchers_path, class: 'list-group-item list-group-item-action', active: :inclusive do %>
       <span class="icon mr-3"><%= icon('fas', 'graduation-cap') %></i></span><%= t('researchers.index') %>
     <% end %>
+
+    <%= active_link_to admins_email_templates_path, class: 'list-group-item list-group-item-action', active: :inclusive do %>
+      <span class="icon mr-3"><%= icon('fas', 'envelope') %></i></span><%= t('activerecord.models.email_template.other') %>
+    <% end %>
   </div>
 </div>
