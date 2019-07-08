@@ -7,7 +7,7 @@ $(document).on('turbolinks:load', () => {
 WAlgProg.loadMarkdownEditor = () => {
   $('.markdown-editor').each((index, element) => {
     const id = $(element).attr('id');
-    WAlgProg.simpleMDE = new SimpleMDE({ element: document.getElementById(id) });
+    WAlgProg.simpleMDE = new SimpleMDE({ element: document.getElementById(id), status: false });
     return WAlgProg.simpleMDE;
   });
 };

@@ -244,3 +244,7 @@ pt-BR:
     unregister: Desregistrar
     index: Modelos de email
     edit: Editar modelo de email
+    text_variables: Variáveis do email
+    contact_name: Nome do contato
+    update_link: Link de atualização de dados
+    unregister_link: Link de descadastro
