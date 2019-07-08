@@ -1,5 +1,4 @@
 class Admins::EmailTemplatesController < Admins::BaseController
-
   add_breadcrumb I18n.t('breadcrumbs.action.index',
                         resource_name: I18n.t('activerecord.models.email_template.other')),
                  :admins_email_templates_path, only: [:index, :edit, :update]
@@ -31,7 +30,10 @@ class Admins::EmailTemplatesController < Admins::BaseController
   protected
 
   def template_params
-    params.require(:email_template).permit(:name, :content_markdown)
+    params.require(:email_template).permit(:name,
+                                           :content_markdown,
+                                           :update_link_title,
+                                           :unregister_link_title)
   end
 
   def set_resource_name

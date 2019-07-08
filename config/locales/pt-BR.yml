@@ -99,6 +99,8 @@ pt-BR:
         name: Nome
         content: Conteúdo
         content_markdown: Conteúdo
+        update_link_title: Título do link de atualizar dados
+        unregister_link_title: Título do link de desregistrar
         <<: *commons
   helpers:
     back: Voltar

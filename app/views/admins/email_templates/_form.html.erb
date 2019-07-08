@@ -7,6 +7,16 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.input :update_link_title %>
+    </div>
+
+    <div class="col-md-6">
+      <%= f.input :unregister_link_title %>
+    </div>
+  </div>
+
   <%= f.input(:content_markdown, input_html: { class: 'markdown-editor' }) %>
 
   <div class="d-flex">
