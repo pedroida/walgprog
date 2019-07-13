@@ -1,11 +1,15 @@
 class Admins::EmailTemplatesController < Admins::BaseController
   add_breadcrumb I18n.t('breadcrumbs.action.index',
                         resource_name: I18n.t('activerecord.models.email_template.other')),
-                 :admins_email_templates_path, only: [:index, :edit, :update]
+                 :admins_email_templates_path, only: [:index, :edit, :update, :show]
 
   add_breadcrumb I18n.t('breadcrumbs.action.edit',
                         resource_name: I18n.t('activerecord.models.email_template.one')),
                  :edit_admins_email_template_path, only: [:edit, :update]
+
+  add_breadcrumb I18n.t('breadcrumbs.action.show',
+                        resource_name: I18n.t('activerecord.models.email_template.one')),
+                 :admins_email_template_path, only: [:show]
 
   before_action :set_template, only: [:edit, :update, :show]
 

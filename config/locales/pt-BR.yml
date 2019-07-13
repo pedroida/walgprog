@@ -248,3 +248,4 @@ pt-BR:
     contact_name: Nome do contato
     update_link: Link de atualização de dados
     unregister_link: Link de descadastro
+    show: "Pré-visualização do email: %{template}"

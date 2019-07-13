@@ -1,4 +1,4 @@
-<%= simple_form_for([:admins, @template], html: { autocomplete: 'off' }) do |f| %>
+<%= simple_form_for([:admins, @template]) do |f| %>
 
   <div class="form-row">
     <div class="col-sm-8">
@@ -42,7 +42,7 @@
   </div>
 
   <div class="d-flex">
-    <%= link_to t('helpers.back'), admins_admins_path, class: 'btn btn-secondary float-left' %>
+    <%= link_to t('helpers.back'), admins_email_templates_path, class: 'btn btn-secondary float-left' %>
     <%= f.button :submit, class: 'btn btn-primary ml-auto' %>
   </div>
 <% end %>
