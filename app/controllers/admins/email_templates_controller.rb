@@ -1,4 +1,6 @@
 class Admins::EmailTemplatesController < Admins::BaseController
+  include ActionView::Helpers::UrlHelper
+
   add_breadcrumb I18n.t('breadcrumbs.action.index',
                         resource_name: I18n.t('activerecord.models.email_template.other')),
                  :admins_email_templates_path, only: [:index, :edit, :update, :show]
@@ -17,7 +19,11 @@ class Admins::EmailTemplatesController < Admins::BaseController
     @templates = EmailTemplate.order(name: :asc)
   end
 
-  def show; end
+  def show
+    @name = 'Claudinaldo'
+    @update_link = link_to @template.update_link_title, admins_email_templates_path
+    @unregister_link = link_to @template.unregister_link_title, admins_email_templates_path
+  end
 
   def edit; end
 

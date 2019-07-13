@@ -115,6 +115,7 @@ pt-BR:
       'false': Não
     until: até
     registered: 'Registrado: %{date}'
+    user: Usuário
   enums:
     user_types:
       administrator: 'Administrador'

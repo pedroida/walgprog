@@ -31,12 +31,11 @@
 
       </div>
     </div>
-
     <fieldset class="form-fieldset col-md-12">
       <legend class="w-auto"><%= t('activerecord.attributes.email_template.content') %></legend>
       <div class="row">
         <div class="col-md-12">
-          <%= ERB::Util.html_escape @template.content.html_safe %>
+          <%= ERB::Util.html_escape @template.get_replaced_content(@update_link, @unregister_link, @name).html_safe %>
         </div>
       </div>
     </fieldset>
