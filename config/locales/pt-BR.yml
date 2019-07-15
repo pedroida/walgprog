@@ -244,7 +244,7 @@ pt-BR:
     update_contact: Atualizar dados
     unregister: Desregistrar
     index: Modelos de email
-    edit: Editar modelo de email
+    edit: "Editar modelo de email: %{name}"
     text_variables: Variáveis do email
     contact_name: Nome do contato
     update_link: Link de atualização de dados

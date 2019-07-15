@@ -40,8 +40,7 @@ class Admins::EmailTemplatesController < Admins::BaseController
   protected
 
   def template_params
-    params.require(:email_template).permit(:name,
-                                           :content_markdown,
+    params.require(:email_template).permit(:content_markdown,
                                            :update_link_title,
                                            :unregister_link_title)
   end

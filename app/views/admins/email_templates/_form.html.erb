@@ -1,12 +1,5 @@
 <%= simple_form_for([:admins, @template]) do |f| %>
 
-  <div class="form-row">
-    <div class="col-sm-8">
-      <%= f.input :name, required: true, autofocus: true, disabled: true %>
-      <%= f.hidden_field :name, required: true, autofocus: true %>
-    </div>
-  </div>
-
   <div class="row">
     <div class="col-md-6">
       <%= f.input :update_link_title %>
