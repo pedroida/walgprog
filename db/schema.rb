@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2019_07_12_124229) do
 
   create_table "email_templates", force: :cascade do |t|
     t.string "name", null: false
+    t.string "subject", null: false
     t.text "content_markdown", null: false
     t.string "content"
     t.datetime "created_at", null: false

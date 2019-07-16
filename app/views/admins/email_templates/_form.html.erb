@@ -1,14 +1,21 @@
 <%= simple_form_for([:admins, @template]) do |f| %>
 
   <div class="row">
-    <div class="col-md-6">
+
+    <div class="col-md-4">
+      <%= f.input :subject %>
+    </div>
+
+    <div class="col-md-4">
       <%= f.input :update_link_title %>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-4">
       <%= f.input :unregister_link_title %>
     </div>
   </div>
+
+  <hr>
 
   <div class="row">
     <div class="col-md-9">

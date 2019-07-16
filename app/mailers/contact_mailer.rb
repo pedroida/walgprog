@@ -6,7 +6,7 @@ class ContactMailer < ApplicationMailer
     @template = EmailTemplate.find 1
     @content = generate_content(@template, @contact)
 
-    mail(to: @contact.email_with_name, subject: I18n.t('mail.welcome_email.subject'))
+    mail(to: @contact.email_with_name, subject: @template.subject)
   end
 
   def success_update
@@ -14,7 +14,7 @@ class ContactMailer < ApplicationMailer
     @template = EmailTemplate.find 2
     @content = generate_content(@template, @contact)
 
-    mail(to: @contact.email_with_name, subject: I18n.t('mail.updated.subject'))
+    mail(to: @contact.email_with_name, subject: @template.subject)
   end
 end
 

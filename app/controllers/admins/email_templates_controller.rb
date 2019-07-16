@@ -20,7 +20,7 @@ class Admins::EmailTemplatesController < Admins::BaseController
   end
 
   def show
-    @name = 'Claudinaldo'
+    @name = I18n.t('helpers.user')
     @update_link = link_to @template.update_link_title, admins_email_templates_path
     @unregister_link = link_to @template.unregister_link_title, admins_email_templates_path
   end
@@ -40,7 +40,8 @@ class Admins::EmailTemplatesController < Admins::BaseController
   protected
 
   def template_params
-    params.require(:email_template).permit(:content_markdown,
+    params.require(:email_template).permit(:subject,
+                                           :content_markdown,
                                            :update_link_title,
                                            :unregister_link_title)
   end

@@ -2,7 +2,7 @@ class EmailTemplate < ApplicationRecord
 
   before_save :md_to_html
 
-  validates :name, :content_markdown, presence: true
+  validates :name, :content_markdown, :subject, presence: true
 
   def get_replaced_content(update_link, unregister_link, name = I18n.t('helpers.user'))
     content.sub! '@nome', name
