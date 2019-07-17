@@ -1,5 +1,4 @@
 class EmailTemplate < ApplicationRecord
-
   before_save :md_to_html
 
   validates :name, :content_markdown, :subject, presence: true

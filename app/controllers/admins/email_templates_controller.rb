@@ -14,6 +14,7 @@ class Admins::EmailTemplatesController < Admins::BaseController
                  :admins_email_template_path, only: [:show]
 
   before_action :set_template, only: [:edit, :update, :show]
+  before_action :set_resource_name, only: [:update]
 
   def index
     @templates = EmailTemplate.order(name: :asc)

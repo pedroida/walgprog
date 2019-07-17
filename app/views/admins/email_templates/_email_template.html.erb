@@ -3,6 +3,9 @@
     <div><%= email_template.name %></div>
   </td>
   <td>
+    <div><%= email_template.subject %></div>
+  </td>
+  <td>
     <%= link_to admins_email_template_path(email_template) do %>
       <%= icon('fas', 'search', class: 'icon ml-2', 'data-toggle' => 'tooltip', title: t('helpers.show')) %>
     <% end %>

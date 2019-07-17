@@ -17,12 +17,18 @@ end
 email_templates = [
   { name: I18n.t('email_template.welcome_mail'),
     subject: I18n.t('mail.welcome_email.subject'),
+    update_link_title: I18n.t('email_template.update_contact'),
+    unregister_link_title: I18n.t('email_template.unregister'),
     content_markdown: Faker::Markdown.sandwich(6, 3) },
   { name: I18n.t('email_template.update_contact'),
     subject: I18n.t('mail.updated.subject'),
+    update_link_title: I18n.t('email_template.update_contact'),
+    unregister_link_title: I18n.t('email_template.unregister'),
     content_markdown: Faker::Markdown.sandwich(6, 3) },
   { name: I18n.t('email_template.unregister'),
     subject: I18n.t('mail.unregistered.subject'),
+    update_link_title: I18n.t('email_template.update_contact'),
+    unregister_link_title: I18n.t('email_template.unregister'),
     content_markdown: Faker::Markdown.sandwich(6, 3) }
 ]
 

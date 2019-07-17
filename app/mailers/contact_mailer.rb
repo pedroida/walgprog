@@ -3,7 +3,7 @@ class ContactMailer < ApplicationMailer
 
   def welcome
     @contact = params[:contact]
-    @template = EmailTemplate.find 1
+    @template = EmailTemplate.find_by name: I18n.t('email_template.welcome_mail')
     @content = generate_content(@template, @contact)
 
     mail(to: @contact.email_with_name, subject: @template.subject)
@@ -11,7 +11,7 @@ class ContactMailer < ApplicationMailer
 
   def success_update
     @contact = params[:contact]
-    @template = EmailTemplate.find 2
+    @template = EmailTemplate.find_by name: I18n.t('email_template.update_contact')
     @content = generate_content(@template, @contact)
 
     mail(to: @contact.email_with_name, subject: @template.subject)

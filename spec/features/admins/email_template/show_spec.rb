@@ -1,42 +1,30 @@
 require 'rails_helper'
 
 describe 'Section:show', type: :feature do
+  include ActionView::Helpers::UrlHelper
+
   let(:admin) { create(:admin) }
-  let(:section) { create(:section) }
+  let(:email_template) { create(:email_template) }
 
   before(:each) do
     login_as(admin, scope: :admin)
-    visit admins_event_section_path(section.event, section)
+    visit admins_email_template_path(email_template)
   end
 
   context 'with data' do
     it 'showed' do
-      within('.card-header') do
-        expect(page).to have_content(I18n.t('sections.show', event: section.event.name))
-      end
-
       within('.card-body') do
-        expect(page).to have_content(section.position)
-        icon_class = page.find('fieldset:first .row div:nth-child(2) i')[:class]
-        expect(icon_class).to eq(section.icon)
-        expect(page).to have_content(section.title)
-        expect(page).to have_content(I18n.t("enums.section_statuses.#{section.status}"))
-        expect(page).to have_content(I18n.l(section.created_at, format: :short))
+        expect(page).to have_content(email_template.name)
+        expect(page).to have_content(email_template.subject)
+        expect(page).to have_content(email_template.update_link_title)
+        expect(page).to have_content(email_template.unregister_link_title)
 
-        expect(page.body).to include(section.content)
-        expect(page.body).to include(section.alternative_content)
+        update_link = link_to email_template.update_link_title, admins_email_templates_path
+        unregister_link = link_to email_template.unregister_link_title, admins_email_templates_path
+        content = ERB::Util.html_escape email_template.get_replaced_content(update_link,
+                                                                            unregister_link).html_safe
+        expect(page.body).to include(content)
       end
-    end
-  end
-
-  context 'with links' do
-    it do
-      expect(page).to have_link(I18n.t('helpers.edit'),
-                                href: edit_admins_event_section_path(section.event, section))
-    end
-    it do
-      expect(page).to have_link(I18n.t('helpers.back'),
-                                href: admins_event_sections_path(section.event))
     end
   end
 end
