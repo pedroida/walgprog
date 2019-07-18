@@ -29,7 +29,7 @@ class Admins::EmailTemplatesController < Admins::BaseController
   def edit; end
 
   def update
-    if @template.update(template_params)
+    if @template.update template_params
       flash[:success] = I18n.t('flash.actions.update.m', resource_name: @resource_name)
       redirect_to admins_email_templates_path
     else

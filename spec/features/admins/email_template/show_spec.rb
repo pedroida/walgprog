@@ -22,7 +22,8 @@ describe 'Section:show', type: :feature do
         update_link = link_to email_template.update_link_title, admins_email_templates_path
         unregister_link = link_to email_template.unregister_link_title, admins_email_templates_path
         content = ERB::Util.html_escape email_template.get_replaced_content(update_link,
-                                                                            unregister_link).html_safe
+                                                                            unregister_link)
+                                                      .html_safe
         expect(page.body).to include(content)
       end
     end
