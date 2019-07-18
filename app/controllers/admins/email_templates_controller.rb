@@ -29,13 +29,13 @@ class Admins::EmailTemplatesController < Admins::BaseController
   def edit; end
 
   def update
-    if @template.update template_params
-      flash[:success] = I18n.t('flash.actions.update.m', resource_name: @resource_name)
-      redirect_to admins_email_templates_path
-    else
-      flash.now[:error] = I18n.t('flash.actions.errors')
-      render :edit
-    end
+    options = {
+      redirect_to: :edit,
+      path: admins_email_templates_path,
+      action: 'flash.actions.update.m',
+      model_name: @resource_name
+    }
+    action_success? @template.update(template_params), options
   end
 
   protected
